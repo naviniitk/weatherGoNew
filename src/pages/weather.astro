@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WeatherDetails from "../components/react/WeatherDetails";
+---
+
+<Layout title="Search for city">
+  <main>
+    <h1>Welcome to WeatherGo</h1>
+    <h4>A world class app for all your weather info</h4>
+    <WeatherDetails client:load />
+  </main>
+</Layout>
+
+<style>
+  p {
+    font-size: 48px;
+  }
+  header {
+    height: 3rem;
+    background-color: var(--accent);
+    scroll-behavior: initial;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+</style>
