@@ -1,0 +1,46 @@
+<div class="nav-links">
+  <div class="app-name">
+    <h1>WeatherGo</h1>
+  </div>
+  <div class="links-container">
+    <a href="/" class="links">Home</a>
+    <a href="/weather" class="links">Weather</a>
+    <a href="/about" class="links">About</a>
+  </div>
+</div>
+
+<style>
+  .nav-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    text-transform: uppercase;
+    background-color: var(--color-signal);
+    border: 3px solid var(--color-shadow, currentColor);
+    border-radius: var(--saize-radius);
+
+    box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, currentColor);
+  }
+  .links-container {
+    display: flex;
+  }
+  .links,
+  .app-name,
+  .links-container {
+    padding: 1.5rem;
+  }
+  h1 {
+    letter-spacing: 2px;
+  }
+  .links-container a {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: azure;
+  }
+  
+</style>

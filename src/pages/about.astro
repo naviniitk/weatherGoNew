@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+<Layout title="About Me">
+  <main>
+  <div class="about-container">
+    <h1>Hi, This website is developed by me, Naveen Kumar</h1>
+    <p>
+      I am a software engineer with experience in react, react-native, nodejs,
+      express, mongodb, typescript, python, c++.
+      <br /><br /> I have keen interest in Astronomy hence I created this app for
+      all the amateur astronomers who need to know about the weather before going
+      to an observation session or doing astrophotography.
+    </p>
+  </div>
+</main>
+</Layout>
+
+
+<style>
+  .about-container {
+    background-color: var(--color-about);
+    border: 3px solid var(--color-shadow, currentColor);
+    box-shadow: 0.5rem 0.5rem 0 var(--color-shadow, currentColor);
+    font-weight: 600;
+    padding: 2rem;
+    letter-spacing: 1px;
+  }
+  h1, p {
+    color: white;
+  }
+</style>
