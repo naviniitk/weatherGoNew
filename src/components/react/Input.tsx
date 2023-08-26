@@ -9,6 +9,7 @@ interface Props {
 const Input: React.FC<Props> = ({ setWeatherData }: Props) => {
   const [error, setError] = useState("");
   const [cityName, setCityName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const fetchCityData = async (text: string) => {
     try {
@@ -29,10 +30,12 @@ const Input: React.FC<Props> = ({ setWeatherData }: Props) => {
   ) => {
     try {
       event.preventDefault();
+      setLoading(true);
       const city = await fetchCityData(cityName);
 
       if (!city.features) {
         setError("Please enter correct city name!!!");
+        setLoading(false);
         return;
       }
       const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${
@@ -43,6 +46,7 @@ const Input: React.FC<Props> = ({ setWeatherData }: Props) => {
 
       const response = await axios.get(url);
       setError("");
+      setLoading(false);
       setWeatherData(response.data);
     } catch (e) {
       setError(e.message);
@@ -69,18 +73,25 @@ const Input: React.FC<Props> = ({ setWeatherData }: Props) => {
           onChange={handleChange}
           autoComplete="off"
           autoFocus
+          disabled={loading}
         />
         <span className="input__label">Enter City</span>
       </label>
       {error && <span className="error">{error}</span>}
 
       <div className="button-group">
-        <button type="submit" onClick={(e) => handleSubmit(e)}>
-          Send
+        <button
+          type="submit"
+          onClick={(e) => handleSubmit(e)}
+          disabled={loading}
+        >
+          {loading ? <div className="loading-spinner"></div> : "Send"}
         </button>
-        <button type="reset" onClick={handleReset}>
-          Reset
-        </button>
+        {!loading && (
+          <button type="reset" onClick={handleReset}>
+            Reset
+          </button>
+        )}
       </div>
     </form>
   );

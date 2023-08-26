@@ -36,15 +36,15 @@ import Header from "../components/astro/Header.astro";
     --color-dark: #212121;
     --color-signal: #f9637c;
     --color-yellow: #fbb45c;
-		--color-green: #038db2;
-		--color-green-dark: #206492;
+    --color-green: #038db2;
+    --color-green-dark: #206492;
 
-    --color-background: var(--color-light);
+    --color-background: #E6E9EB;
     --color-text: var(--color-dark);
     --color-accent: var(--color-signal);
-		--color-card: var(--color-yellow);
-		--color-about: var(--color-green);
-		--color-secondary-accent: var(--color-green-dark);
+    --color-card: var(--color-yellow);
+    --color-about: var(--color-green);
+    --color-secondary-accent: var(--color-green-dark);
 
     --size-bezel: 0.5rem;
     --size-radius: 4px;
@@ -62,6 +62,14 @@ import Header from "../components/astro/Header.astro";
     margin: 0;
     padding: 15rem;
     padding-top: 7rem;
+  }
+
+  @media (max-width: 819px) {
+    main {
+      margin: 0;
+      padding: 10vw;
+      padding-top: 7rem;
+    }
   }
   body {
     padding: 0;

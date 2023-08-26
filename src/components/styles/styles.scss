@@ -133,6 +133,17 @@ button + button {
   font-weight: 500;
 }
 
+@media (max-width: 768px) {
+  .weather-card {
+    min-width: auto;
+  }
+
+  .list-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .heading {
   text-align: center;
 }
@@ -175,4 +186,21 @@ button + button {
   flex-direction: column;
   width: 80%;
   align-self: self-end;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #f3f3f3; /* Light grey */
+  border-top: 2px solid #383636; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
 }
